@@ -1,1 +1,1 @@
-https://lashagg.github.io/Guess_My_Number/
+https://lashagg.github.io/Guess_Number/

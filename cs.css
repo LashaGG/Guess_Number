@@ -30,7 +30,13 @@ h1 {
     margin-bottom: 20px;
 }
 
+.input{
+    font-family: 'Press Start 2P', cursive;
+
+}
+
 .input-field label {
+    font-family: 'Press Start 2P', cursive;
     font-weight: bold;
 }
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess My Number</title>
+    <link rel="stylesheet" href="cs.css">
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+    <p id="record">record is</p>
+
+
+    <h1>Guess My Number</h1>
+
+    <div class="counter">tries:0</div>
+
+    <div class="message">I'm thinking of a number between 1 and 100. Can you guess it?</div>
+
+    <div class="input-field">
+        <label for="guess">Your Guess:</label>
+        <input type="number" id="guess" autocomplete="off" name="text" class="input" min="1" max="100">
+    </div>
+
+    <span id="answer"></span>
+
+    <button class="btn" onclick="checkGuess()">Check</button>
+
+</div>
+
+
+<script src="js.js"></script>
+
+</body>
+</html>

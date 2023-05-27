@@ -28,7 +28,6 @@ function restart() {
 function checkGuess() {
 
 
-    document.querySelector(".btn").textContent = "Check";
 
     const guessInput = document.querySelector("#guess");
     const answer = document.getElementById("answer");
@@ -39,6 +38,9 @@ function checkGuess() {
         previous = number;
     }
     else return;
+
+    document.querySelector(".btn").textContent = "Check";
+
 
     let ans = "📉 Too Small";
     answer.style.color = "#4942E4";

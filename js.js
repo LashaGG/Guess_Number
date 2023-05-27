@@ -13,6 +13,7 @@ function restart() {
     random = newRand;
 
     document.querySelector(".btn").textContent = "Restart";
+    document.getElementById("guess").value = '';
 
 
     if (counter < record) {
@@ -33,11 +34,12 @@ function checkGuess() {
     const answer = document.getElementById("answer");
     const number = Number(guessInput.value);
 
-    if (number !== previous) {
+    if (number !== previous && number !== 0) {
         riseCounter();
         previous = number;
     }
-    else return;
+    else    { if(number == 0)document.querySelector(".btn").textContent = "Check";     answer.textContent =""; document.querySelector(".counter").textContent="tries:0";
+        return;}
 
     document.querySelector(".btn").textContent = "Check";
 

@@ -1,7 +1,15 @@
 let counter = 0;
 let record = 500;
-let random = Math.floor(Math.random() * 100) + 1;
+let random = 50;//Math.floor(Math.random() * 100) + 1;
 let previous = 0;
+
+
+document.addEventListener("keydown", function (event) {
+    if (event.keyCode === 13) {
+        checkGuess();
+    }
+});
+
 
 function restart() {
 
@@ -29,7 +37,6 @@ function restart() {
 function checkGuess() {
 
 
-
     const guessInput = document.querySelector("#guess");
     const answer = document.getElementById("answer");
     const number = Number(guessInput.value);
@@ -37,9 +44,12 @@ function checkGuess() {
     if (number !== previous && number !== 0) {
         riseCounter();
         previous = number;
+    } else {
+        if (number === 0) document.querySelector(".btn").textContent = "Check";
+        answer.textContent = "";
+        document.querySelector(".counter").textContent = "tries:0";
+        return;
     }
-    else    { if(number == 0)document.querySelector(".btn").textContent = "Check";     answer.textContent =""; document.querySelector(".counter").textContent="tries:0";
-        return;}
 
     document.querySelector(".btn").textContent = "Check";
 

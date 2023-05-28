@@ -42,7 +42,7 @@ h1 {
 
 .btn {
     font-family: 'Press Start 2P', cursive;
-    background-color: #F45050; /* Change to a warm red color */
+    background-color: #F45050;
     color: #fff;
     font-size: 16px;
     padding: 10px 20px;
@@ -52,7 +52,7 @@ h1 {
 }
 
 .btn:hover {
-    background-color: #FF6347; /* Darker shade of red on hover */
+    background-color: #FF6347; 
 }
 
 #answer {

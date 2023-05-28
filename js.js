@@ -1,15 +1,12 @@
 let counter = 0;
 let record = 500;
-let random =Math.floor(Math.random() * 100) + 1;
+let random = 50;  //Math.floor(Math.random() * 100) + 1;
 let previous = 0;
-
-
 document.addEventListener("keydown", function (event) {
     if (event.keyCode === 13) {
         checkGuess();
     }
 });
-
 
 function restart() {
 
@@ -18,6 +15,7 @@ function restart() {
         restart();
         return;
     }
+
     random = newRand;
 
     document.querySelector(".btn").textContent = "Restart";
@@ -28,10 +26,7 @@ function restart() {
         record = counter;
         document.getElementById("record").textContent = `record is ${record} tries`;
     }
-
-    counter = 0;
-    document.querySelector(".counter").style.color = "539165";
-
+    counter = -1;
 }
 
 function checkGuess() {
@@ -41,17 +36,13 @@ function checkGuess() {
     const answer = document.getElementById("answer");
     const number = Number(guessInput.value);
 
-    if (number !== previous && number !== 0) {
-        riseCounter();
-        previous = number;
-    } else {
-        if (number === 0) document.querySelector(".btn").textContent = "Check";
-        answer.textContent = "";
-        document.querySelector(".counter").textContent = "tries:0";
-        return;
-    }
 
     document.querySelector(".btn").textContent = "Check";
+
+   if(number !== previous)  riseCounter();
+
+   previous = number;
+
 
 
     let ans = "📉 Too Small";
@@ -65,21 +56,19 @@ function checkGuess() {
         ans = "Too Big 📈";
         answer.style.color = "#CD1818";
     }
+    else  if(number === 0) ans="";
 
     answer.textContent = ans;
 
 }
 
 function riseCounter() {
-
-
     counter++;
     const htmlCounter = document.querySelector(".counter");
     htmlCounter.textContent = `tries: ${counter}`;
 
-    if (counter > 10) {
+    if (counter > 3) {
         htmlCounter.style.color = "#EF5B0C";
-        if (counter > 20) htmlCounter.style.color = "#DF2E38";
-    }
-
+        if (counter > 6) htmlCounter.style.color = "#DF2E38";
+    } else htmlCounter.style.color = '#539165';
 }

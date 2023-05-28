@@ -1,6 +1,6 @@
 let counter = 0;
 let record = 500;
-let random = 50;//Math.floor(Math.random() * 100) + 1;
+let random =Math.floor(Math.random() * 100) + 1;
 let previous = 0;
 
 
